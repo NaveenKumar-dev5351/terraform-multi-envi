@@ -2,10 +2,6 @@ variable "project" {
     default = "roboshop"
 }
 
-variable "environment" {
-
-}
-
 variable "common_tags"{
     default = {
         Project = "roboshop"
@@ -21,7 +17,7 @@ variable "sg_description" {
     default = "allowing all ports from all IP"
 }
 
-variable "instance" {
+variable "instances" {
     default = ["mongodb","redis"]
 }
 
@@ -45,5 +41,8 @@ variable "ami_id" {
 }
 
 variable "instance_type" {
-    
+    default = {
+        dev = "t3.micro"
+        prod = "t3.small"
+    }
 }
